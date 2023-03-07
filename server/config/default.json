@@ -1,0 +1,5 @@
+{
+  "localServerPort": 5000,
+  "mongodbUrl": "mongodb+srv://username:sample-password@clusterclouddisk.idkr0ut.mongodb.net/?retryWrites=true&w=majority",
+  "secretKeyForJWT": "secretKeyForJWT"
+}
