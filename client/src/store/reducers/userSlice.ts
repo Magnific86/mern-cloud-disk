@@ -1,16 +1,26 @@
-import { IStateUser } from "../storeTypes";
-import { createSlice } from "@reduxjs/toolkit";
+import { ICurrUser, IStateUser } from "../storeTypes";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: IStateUser = {
-  currentUser: "",
+  currentUser: {
+    email: "",
+    password: "",
+  },
   isAuth: false,
 };
 
 const slice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    saveUser(state, action: PayloadAction<ICurrUser>) {
+      state.currentUser = action.payload;
+    },
+    toggleAuth(state) {
+      state.isAuth = !state.isAuth;
+    },
+  },
 });
 
 export const userReducer = slice.reducer;
-export const {} = slice.actions;
+export const { saveUser, toggleAuth } = slice.actions;

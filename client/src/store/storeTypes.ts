@@ -1,9 +1,14 @@
 export interface ICurrentUser {
-    currentUser: ''
+  currentUser: "";
+}
+
+export interface ICurrUser {
+  email: string;
+  password: string;
 }
 
 export interface IStateUser {
-  currentUser: '';
+  currentUser: ICurrUser;
   isAuth: boolean;
 }
 

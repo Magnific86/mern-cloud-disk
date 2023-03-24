@@ -3,12 +3,14 @@ const mongoose = require("mongoose");
 const config = require("config");
 const cors = require("cors");
 const authRouter = require("./routes/authRouter.js");
+const fileRouter = require("./routes/fileRouter.js");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRouter);
+app.use("/api/files", fileRouter);
 app.use(express.urlencoded());
 mongoose.set("strictQuery", false);
 
